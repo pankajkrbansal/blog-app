@@ -3,10 +3,18 @@ import service from '../services/userService.js'
 
 const router = express.Router();
 
-// @desc authenticate user
-// @route /api/users/auth
+// @desc register new user
+router.get('/', async(req, res, next) => {
+    try{
 
-router.get('/auth', async(req, res, next) => {
+    }catch(err){
+        next(err);
+    }
+})
+
+// @desc authenticate user & get token
+// @route /api/users/auth
+router.post('/auth', async(req, res, next) => {
     try{
         let resp = await service.authUser("");
         res.json(resp);
