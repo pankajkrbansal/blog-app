@@ -9,3 +9,157 @@ Fri May 26 2023 01:03:08 GMT+0530 (India Standard Time) - Error: Error Check
     at Function.process_params (D:\ANgular\backend-task\node_modules\express\lib\router\index.js:346:12)
     at next (D:\ANgular\backend-task\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (D:\ANgular\backend-task\node_modules\express\lib\router\index.js:175:3)
+Fri May 26 2023 23:53:38 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Fri May 26 2023 23:55:18 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Fri May 26 2023 23:57:59 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:37:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:00:31 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:02:06 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:02:28 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:03:13 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:36:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:03:57 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:37:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:04:24 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:37:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:06:41 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:37:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:06:56 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:37:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:07:25 GMT+0530 (India Standard Time) - ObjectParameterError: Parameter "filter" to find() must be an object, got "sasasdsdsdassas" (type string)
+    at Query.find (D:\ANgular\backend-task\node_modules\mongoose\lib\query.js:2329:16)
+    at Function.find (D:\ANgular\backend-task\node_modules\mongoose\lib\model.js:2068:13)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:34:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:08:13 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:38:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:13:06 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:41:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:13:22 GMT+0530 (India Standard Time) - Error: data and hash arguments required
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:208:17)
+    at D:\ANgular\backend-task\node_modules\bcrypt\promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (D:\ANgular\backend-task\node_modules\bcrypt\promises.js:20:12)
+    at Object.compare (D:\ANgular\backend-task\node_modules\bcrypt\bcrypt.js:204:25)
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:41:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:13:48 GMT+0530 (India Standard Time) - Error: Invalid Credentials
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:47:13)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:14:53 GMT+0530 (India Standard Time) - Error: Invalid Credentials
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:47:13)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:16:14 GMT+0530 (India Standard Time) - Error: Invalid Credentials
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:47:13)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:33:10 GMT+0530 (India Standard Time) - Error: Invalid Credentials
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:47:13)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:41:51 GMT+0530 (India Standard Time) - Error: Invalid Credentials
+    at service.authUser (file:///D:/ANgular/backend-task/services/userService.js:47:13)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:24:20
+Sat May 27 2023 00:42:16 GMT+0530 (India Standard Time) - Error: User Already Registered
+    at service.registerUser (file:///D:/ANgular/backend-task/services/userService.js:11:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:12:20
+Sat May 27 2023 00:47:04 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'password')
+    at service.registerUser (file:///D:/ANgular/backend-task/services/userService.js:17:39)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:12:20
