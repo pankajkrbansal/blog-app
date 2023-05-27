@@ -3,9 +3,16 @@ import * as mongoose from "mongoose";
 const url = "mongodb://0.0.0.0:27017/backend-task";
 
 const replySchema = mongoose.Schema({
+    replyId:{
+        type:String
+    },
     text:{
         // required:true,
         type:String
+    },
+    email:{
+        type:String,
+        // required:true
     },
     likes:{
         type:Number,
@@ -15,10 +22,7 @@ const replySchema = mongoose.Schema({
         type:Number,
         default:0
     },
-    email:{
-        type:String,
-        // required:true
-    }
+    
 })
 
 const postSchema = mongoose.Schema({
@@ -39,6 +43,10 @@ const postSchema = mongoose.Schema({
         type:String
     },
     comment:[{
+        commentId:{
+            type:String,
+            required:true
+        },
         text:{
             type:String,
         },

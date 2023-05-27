@@ -48,7 +48,7 @@ router.post('/create', protect, async(req, res, next) => {
 })
 
 // @desc add comment to a post
-// @route /api/users/comments/:postId/comment
+// @route /api/users/comments/:postId
 router.post('/comments/:postId', protect, async(req, res, next) => {
 try{
     let postId = req.params.postId;
@@ -61,6 +61,18 @@ try{
 }
 })
 
+// @desc reply to a comment
+
+router.post('/reply-to-comment/:postId/:commentId', protect, async(req, res, next) => {
+    try{
+        let {postId, commentId} = req.params;
+        let {reply, email} = req.body;
+        let resp = await service.replyToComment(postId, commentId, reply, email);
+        res.json(resp);
+    }catch(err){
+        next(err);
+    }
+})
 
 
 export default router;

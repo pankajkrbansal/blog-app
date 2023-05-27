@@ -54,7 +54,6 @@ service.authUser = async (userData) => {
 
 
 service.createPost = async(noteData) => {
-  try{
     // console.log("\nCreate Post Service\n");
 
     const uid = new ShortUniqueId({ length:5 });
@@ -67,23 +66,50 @@ service.createPost = async(noteData) => {
     
     let resp = await postCollection.create(noteData);
     // console.log("\nressponse\n", resp);
-    return resp;
-  }catch(e){
-    let err =  new Error("User Not Found")
+    if(resp){
+      return resp;
+    }else{
+      let err =  new Error("User Not Found")
     err.status = 404
     throw err;
-  }
+    }
 }
 
 service.postComment = async(postId, text, email) => {
-  try{
     let postCollection = await connection.getPostCollection();
     let post = await postCollection.findOne({postId});
-    console.log("\nPost\n", post);
-    post.comment.push({text, email});
+    const uid = new ShortUniqueId({ length:5 });
+    let commentId = uid();
+    post.comment.push({text, email, commentId});
     let result = await post.save();
-    return result;
-  }catch(err){
+    if(result){
+      return result
+    }else{
+      err.status = 500;
+      throw new Error("Internal Server Error");
+    }
+  
+}
+
+service.replyToComment = async(postId, commentId, text, email) => {
+  let postCollection = await connection.getPostCollection();
+  let post = await postCollection.findOne({postId});
+  const uid = new ShortUniqueId({ length:3 });
+  let replyId = uid();
+  // let comment = post.comment.id(commentId);
+  post.comment.map((eachComment) => {
+    if(eachComment.commentId == commentId){
+      console.log(eachComment);
+      eachComment.replies.push({replyId, text, email});
+    }
+  });
+
+  // console.log(post);
+  // post.comment.replies.push(reply);
+  let result = await post.save();
+  if(result){
+    return result
+  }else{
     err.status = 500;
     throw new Error("Internal Server Error");
   }

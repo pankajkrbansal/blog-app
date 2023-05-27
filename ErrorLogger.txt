@@ -1,12 +1,36 @@
-Sat May 27 2023 21:24:18 GMT+0530 (India Standard Time) - Error: Internal Server Error
-    at service.postComment (file:///D:/ANgular/backend-task/services/userService.js:87:11)
+Sat May 27 2023 22:32:49 GMT+0530 (India Standard Time) - ReferenceError: commentId is not defined
+    at service.postComment (file:///D:/ANgular/backend-task/services/userService.js:82:15)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///D:/ANgular/backend-task/routes/userRoutes.js:57:16
-Sat May 27 2023 21:27:10 GMT+0530 (India Standard Time) - Error: Internal Server Error
-    at service.postComment (file:///D:/ANgular/backend-task/services/userService.js:88:11)
+Sat May 27 2023 23:08:05 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of null (reading 'replies')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:11)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:57:16
-Sat May 27 2023 21:30:09 GMT+0530 (India Standard Time) - Error: Internal Server Error
-    at service.postComment (file:///D:/ANgular/backend-task/services/userService.js:88:11)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:11:03 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'push')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:19)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:57:16
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:12:07 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'push')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:12:58 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'push')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:13:17 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'push')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:14:19 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'replies')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:14:34 GMT+0530 (India Standard Time) - TypeError: Cannot read properties of undefined (reading 'push')
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:99:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
+Sat May 27 2023 23:24:55 GMT+0530 (India Standard Time) - TypeError: comment.map is not a function
+    at service.replyToComment (file:///D:/ANgular/backend-task/services/userService.js:98:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///D:/ANgular/backend-task/routes/userRoutes.js:70:20
