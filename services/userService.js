@@ -5,6 +5,7 @@ import ShortUniqueId from "short-unique-id";
 let service = {};
 
 service.registerUser = async (usrBody) => {
+  let regex = /^[a-z]+[0-9]*\@gmail.com$/;
   let { name, email, password } = usrBody;
   let userCollection = await connection.getUserCollection();
   let userData = await userCollection.find({ email });
@@ -12,8 +13,12 @@ service.registerUser = async (usrBody) => {
     let err = new Error("User Already Registered");
     err.status = 400;
     throw err;
-  } else {
-    
+  } 
+  if(!regex.test(email)){
+    let err = new Error("Invalid Email, Gmail Domain Expected");
+    err.status = 401;
+    throw err;
+  } else { 
     const salt = await bcrypt.genSalt(10);
     password = await bcrypt.hash(usrBody.password, salt);    // hashing password
     usrBody.password = password;
@@ -187,7 +192,5 @@ service.likeReply = async(postId, commentId, replyId) => {
     throw err;
   }
 }
-
-
 
 export default service;
