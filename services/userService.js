@@ -110,9 +110,84 @@ service.replyToComment = async(postId, commentId, text, email) => {
   if(result){
     return result
   }else{
+    let err = new Error("try Again");
     err.status = 500;
-    throw new Error("Internal Server Error");
+    throw err;
   }
 }
+service.likePost = async(postId) => {
+  let postCollection = await connection.getPostCollection();
+  let post = await postCollection.findOne({postId});
+  post.like += 1;
+  let resp = await post.save();
+  if(resp){
+    return resp;
+  }else{
+    let err = new Error("try Again");
+    err.status = 500;
+    throw err;
+  }
+}
+
+
+service.likeComment = async(postId, commentId) => {
+  let postCollection = await connection.getPostCollection();
+  let post = await postCollection.findOne({postId});
+  post.comment.map((eachComment) => {
+    if(eachComment.commentId == commentId){
+      eachComment.like += 1;
+    }
+  })
+  let resp = await post.save();
+  if(resp){
+    return resp;
+  }else{
+    let err = new Error("try Again");
+    err.status = 500;
+    throw err;
+  }
+}
+
+service.dislikeComment = async(postId, commentId) => {
+  let postCollection = await connection.getPostCollection();
+  let post = await postCollection.findOne({postId});
+  post.comment.map((eachComment) => {
+    if(eachComment.commentId == commentId){
+      eachComment.dislike -= 1;
+    }
+  })
+  let resp = await post.save();
+  if(resp){
+    return resp;
+  }else{
+    let err = new Error("try Again");
+    err.status = 500;
+    throw err;
+  }
+}
+
+service.likeReply = async(postId, commentId, replyId) => {
+  let postCollection = await connection.getPostCollection();
+  let post = await postCollection.findOne({postId});
+  post.comment.map((eachComment) => {
+    if(eachComment.commentId == commentId){
+      eachComment.replies.map((eachReply) => {
+        if(eachReply.replyId == replyId){
+          eachReply.like += 1
+        }
+      })
+    }
+  })
+  let resp = await post.save();
+  if(resp){
+    return resp;
+  }else{
+    let err = new Error("try Again");
+    err.status = 500;
+    throw err;
+  }
+}
+
+
 
 export default service;

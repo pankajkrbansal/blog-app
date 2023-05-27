@@ -74,5 +74,45 @@ router.post('/reply-to-comment/:postId/:commentId', protect, async(req, res, nex
     }
 })
 
+router.post('/like-post/:postId', async(req, res, next) => {
+    try{
+        let {postId} = req.params;
+        let resp = await service.likePost(postId);
+        res.json(resp);
+    }catch(err){
+        next(err);
+    }
+})
+
+router.post('/like-comment/:postId/:commentId', async(req, res, next) => {
+    try{
+        let {postId, commentId} = req.params;
+        let resp = await service.likeComment(postId, commentId);
+        res.json(resp);
+    }catch(err){
+        next(err);
+    }
+})
+
+router.post('/dislike-comment/:postId/:commentId', async(req, res, next) => {
+    try{
+        let {postId, commentId} = req.params;
+        let resp = await service.dislikeComment(postId, commentId);
+        res.json(resp);
+    }catch(err){
+        next(err);
+    }
+})
+
+router.post('/like-reply/:postId/:commentId/:replyId', async(req, res, next) => {
+    try{
+        let {postId, commentId, replyId} = req.params;
+        let resp = await service.likeReply(postId, commentId, replyId);
+        res.json(resp);
+    }catch(err){
+        next(err);
+    }
+})
+
 
 export default router;
