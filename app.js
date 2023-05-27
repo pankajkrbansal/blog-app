@@ -17,6 +17,7 @@ await connection.connectDB();
 
 app.use('/api/users', router);
 
+
 // error-logger
 app.use(errorLogger);
 

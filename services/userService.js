@@ -1,5 +1,6 @@
 import connection from "../utilities/connection.js";
 import bcrypt from 'bcrypt';
+import ShortUniqueId from "short-unique-id";
 
 let service = {};
 
@@ -37,10 +38,10 @@ service.authUser = async (userData) => {
   let user = await userModel.findOne({email});
 
   console.log(user.password);
-  console.log(`user 36 ${user} ${userData.password}`);
+  // console.log(`user 36 ${user} ${userData.password}`);
 
   let decrypted = await bcrypt.compare(userData.password, user.password);
-  console.log(decrypted);
+  // console.log(decrypted);
 
   if (user && decrypted) {
     return user;
@@ -52,13 +53,39 @@ service.authUser = async (userData) => {
 };
 
 
-service.createNote = async(noteData) => {
+service.createPost = async(noteData) => {
   try{
-    return true;
+    // console.log("\nCreate Post Service\n");
+
+    const uid = new ShortUniqueId({ length:5 });
+    let postCollection = await connection.getPostCollection();
+    // console.log("\nPostcollection\n", postCollection);
+    
+    noteData.postId = uid();
+    // noteData.replies = [];
+    // console.log("\nNote Data\n", noteData);
+    
+    let resp = await postCollection.create(noteData);
+    // console.log("\nressponse\n", resp);
+    return resp;
   }catch(e){
     let err =  new Error("User Not Found")
     err.status = 404
     throw err;
+  }
+}
+
+service.postComment = async(postId, text, email) => {
+  try{
+    let postCollection = await connection.getPostCollection();
+    let post = await postCollection.findOne({postId});
+    console.log("\nPost\n", post);
+    post.comment.push({text, email});
+    let result = await post.save();
+    return result;
+  }catch(err){
+    err.status = 500;
+    throw new Error("Internal Server Error");
   }
 }
 

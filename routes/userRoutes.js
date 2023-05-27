@@ -10,7 +10,7 @@ const router = express.Router();
 router.post('/', async(req, res, next) => {
     try{
         let resp = await service.registerUser(req.body);
-        generateToken(res, resp._id);
+        generateToken(res, resp.email);
         res.json(resp);
     }catch(err){
         next(err);
@@ -23,7 +23,7 @@ router.post('/auth', async(req, res, next) => {
     try{
         let resp = await service.authUser(req.body);
        if(resp){
-        generateToken(res, resp._id);
+        generateToken(res, resp.email);
         res.json({message:`Logged In ${resp}`});
        }
     }catch(err){
@@ -35,15 +35,32 @@ router.post('/auth', async(req, res, next) => {
 // route /api/users/create
 router.post('/create', protect, async(req, res, next) => {
     try{
-        console.log("\n\nCalled\n\n");
-        let resp = await service.createNote(req.body);
-        if(res){
-            return resp
+        console.log("\n\nPost Create Called\n\n");
+        console.log(req.user);
+        let resp = await service.createPost(req.body);
+        // console.log("\nResponse Route\n", resp);
+        if(resp){
+            res.json(resp);
         }
     }catch(err){
         next(err);
     }
 })
+
+// @desc add comment to a post
+// @route /api/users/comments/:postId/comment
+router.post('/comments/:postId', protect, async(req, res, next) => {
+try{
+    let postId = req.params.postId;
+    console.log(postId);
+    let {text, email} = req.body;
+    let resp = await service.postComment(postId, text, email);
+    res.json(resp);
+}catch(err){
+    next(err);
+}
+})
+
 
 
 export default router;
