@@ -4,6 +4,12 @@ import ShortUniqueId from "short-unique-id";
 
 let service = {};
 
+/**
+ * Registers a new user.
+ * @param {Object} usrBody - User data (name, email, password).
+ * @returns {Promise<Object>} - Resolves to the registered user data.
+ * @throws {Error} - If the user is already registered or if the email is invalid.
+ */
 service.registerUser = async (usrBody) => {
   let regex = /^[a-z]+[0-9]*\@gmail.com$/;
   let { name, email, password } = usrBody;
@@ -34,8 +40,12 @@ service.registerUser = async (usrBody) => {
   }
 };
 
-// @desc authenticate user
-// @route /api/users/auth
+/**
+ * Authenticates a user.
+ * @param {Object} userData - User data (email, password).
+ * @returns {Promise<Object>} - Resolves to the authenticated user data.
+ * @throws {Error} - If the credentials are invalid.
+ */
 service.authUser = async (userData) => {
   let { email } = userData
 
@@ -57,7 +67,12 @@ service.authUser = async (userData) => {
   }
 };
 
-
+/**
+ * Creates a new post.
+ * @param {Object} noteData - Post data.
+ * @returns {Promise<Object>} - Resolves to the created post data.
+ * @throws {Error} - If the user is not found.
+ */
 service.createPost = async(noteData) => {
     // console.log("\nCreate Post Service\n");
 
@@ -80,6 +95,14 @@ service.createPost = async(noteData) => {
     }
 }
 
+/**
+ * Posts a comment on a post.
+ * @param {string} postId - ID of the post.
+ * @param {string} text - Comment text.
+ * @param {string} email - User email.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 service.postComment = async(postId, text, email) => {
     let postCollection = await connection.getPostCollection();
     let post = await postCollection.findOne({postId});
@@ -95,6 +118,16 @@ service.postComment = async(postId, text, email) => {
     }
   
 }
+
+/**
+ * Replies to a comment on a post.
+ * @param {string} postId - ID of the post.
+ * @param {string} commentId - ID of the comment.
+ * @param {string} text - Reply text.
+ * @param {string} email - User email.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 
 service.replyToComment = async(postId, commentId, text, email) => {
   let postCollection = await connection.getPostCollection();
@@ -120,6 +153,13 @@ service.replyToComment = async(postId, commentId, text, email) => {
     throw err;
   }
 }
+
+/**
+ * Likes a post.
+ * @param {string} postId - ID of the post.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 service.likePost = async(postId) => {
   let postCollection = await connection.getPostCollection();
   let post = await postCollection.findOne({postId});
@@ -134,7 +174,13 @@ service.likePost = async(postId) => {
   }
 }
 
-
+/**
+ * Likes a comment on a post.
+ * @param {string} postId - ID of the post.
+ * @param {string} commentId - ID of the comment.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 service.likeComment = async(postId, commentId) => {
   let postCollection = await connection.getPostCollection();
   let post = await postCollection.findOne({postId});
@@ -153,12 +199,19 @@ service.likeComment = async(postId, commentId) => {
   }
 }
 
+/**
+ * Dislikes a comment on a post.
+ * @param {string} postId - ID of the post.
+ * @param {string} commentId - ID of the comment.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 service.dislikeComment = async(postId, commentId) => {
   let postCollection = await connection.getPostCollection();
   let post = await postCollection.findOne({postId});
   post.comment.map((eachComment) => {
     if(eachComment.commentId == commentId){
-      eachComment.dislike -= 1;
+      eachComment.dislike += 1;
     }
   })
   let resp = await post.save();
@@ -171,6 +224,14 @@ service.dislikeComment = async(postId, commentId) => {
   }
 }
 
+/**
+ * Likes a reply to a comment on a post.
+ * @param {string} postId - ID of the post.
+ * @param {string} commentId - ID of the comment.
+ * @param {string} replyId - ID of the reply.
+ * @returns {Promise<Object>} - Resolves to the updated post data.
+ * @throws {Error} - If an error occurs or the server returns an error.
+ */
 service.likeReply = async(postId, commentId, replyId) => {
   let postCollection = await connection.getPostCollection();
   let post = await postCollection.findOne({postId});
