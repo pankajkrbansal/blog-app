@@ -17,25 +17,35 @@ The Backend Task project is designed to tackle a specific task using backend dev
 To set up the project locally, please follow the steps below:
 
 1. Clone the repository using the following command:
+
    ```
    git clone https://github.com/pankajkrbansal/backend-task.git
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd backend-task
    ```
 
 3. Install the project dependencies:
+
    ```
    npm install
    ```
 
 4. Configure any required environment variables or settings according to the project's documentation.
 
+5. To start the application, use the following command
+
+```
+node app
+```
+
 ## Usage
 
 To run the project, use the following command:
+
 ```
 npm start
 ```
@@ -44,8 +54,7 @@ Ensure that any required dependencies or services are running or configured prop
 
 ### Routes
 
-- `POST /`: Registers a new user and generates a token for authentication.
--` POST /auth`: Authenticates a user and generates a token for further requests.
+- `POST /`: Registers a new user and generates a token for authentication. -` POST /auth`: Authenticates a user and generates a token for further requests.
 - `POST /create`: Creates a new post. This route requires authentication.
 - `POST /comments/:postId`: Posts a comment on a specific post. This route requires authentication.
 - `POST /reply-to-comment/:postId/:commentId`: Replies to a comment on a specific post. This route requires authentication.
@@ -53,11 +62,12 @@ Ensure that any required dependencies or services are running or configured prop
 - `POST /like-comment/:postId/:commentId`: Likes a specific comment on a post.
 - `POST /dislike-comment/:postId/:commentId`: Dislikes a specific comment on a post.
 - `POST /like-reply/:postId/:commentId/:replyId`: Likes a specific reply to a comment.
-The protect middleware is used to ensure that routes requiring authentication are protected and can only be accessed by authenticated users. The next function is used to pass control to the next middleware or error handler.
+  The protect middleware is used to ensure that routes requiring authentication are protected and can only be accessed by authenticated users. The next function is used to pass control to the next middleware or error handler.
 
 Please note that this documentation assumes the presence of other modules.
 
 ### Service
+
 - `registerUser`: Registers a new user by checking if the user is already registered, validating the email format, hashing the password, and saving the user data to the user collection.
 
 - `authUser`: Authenticates a user by checking the email and password against the stored user data.
