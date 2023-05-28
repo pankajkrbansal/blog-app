@@ -34,21 +34,21 @@ To set up the project locally, please follow the steps below:
    npm install
    ```
 
-4. Configure any required environment variables or settings according to the project's documentation.
+4. Configure following required environment variables
+    - SERVER_PORT
+    - JWT_SECRET
 
-5. To start the application, use the following command
-
-```
-node app
-```
 
 ## Usage
 
 To run the project, use the following command:
 
 ```
-npm start
+node app
 ```
+
+To run this application smoothly, postman collection has also been attached with this repository named ``back-end-task.postman_collection.json``.
+
 
 Ensure that any required dependencies or services are running or configured properly before starting the application.
 

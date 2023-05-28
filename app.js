@@ -12,6 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+const PORT = process.env.SERVER_PORT || 3000;
+
 // calling connectDB to connect with mongodb
 await connection.connectDB();
 
@@ -21,6 +23,6 @@ app.use('/api/users', router);
 // error-logger
 app.use(errorLogger);
 
-app.listen(process.env.SERVER_PORT, () => {
+app.listen(PORT, () => {
     console.log("App @ 3000");
 })
