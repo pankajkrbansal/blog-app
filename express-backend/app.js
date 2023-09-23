@@ -1,28 +1,39 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import cookieParser from 'cookie-parser';
+const express = require("express");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
-import router from './routes/userRoutes.js';
-import errorLogger from './utilities/errorLogger.js';
-import connection from './utilities/connection.js';
+const router = require("./routes/userRoutes.js");
+const errorLogger = require("./utilities/errorLogger.js");
+const connection = require("./utilities/connection.js");
+
 dotenv.config();
 
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials:true,
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+);
 
-const PORT = process.env.SERVER_PORT || 3000;
+const PORT = process.env.SERVER_PORT;
 
 // calling connectDB to connect with mongodb
-await connection.connectDB();
+(async () => {
+  await connection.connectDB();
+})();
 
-app.use('/api/users', router);
-
+app.use("/api/users", router);
 
 // error-logger
 app.use(errorLogger);
 
 app.listen(PORT, () => {
-    console.log("App @ 3000");
-})
+  console.log("App @ 1050");
+});

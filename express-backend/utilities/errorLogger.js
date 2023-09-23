@@ -1,4 +1,4 @@
-import fs from  'fs';
+const fs = require('fs');
 
 let errorLogger = function (err,req,res,next) {
     if (err) {
@@ -20,4 +20,4 @@ let errorLogger = function (err,req,res,next) {
 }
 
 
-export default errorLogger
+module.exports = errorLogger

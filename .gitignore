@@ -1,0 +1,5 @@
+frontend
+express-backend/node_modules/*
+express-backend/.env
+express-backend/ErrorLogger.txt
+uploads/

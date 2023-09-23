@@ -1,5 +1,5 @@
-import jwt  from "jsonwebtoken";
-import connection from "./connection.js";
+const jwt = require("jsonwebtoken");
+const connection = require("./connection");
 
 const protect = async(req, res, next) => {
     // console.log('\n\nProtect Called\n\n');
@@ -15,13 +15,18 @@ const protect = async(req, res, next) => {
             // console.log(req.user);
             next();
         }catch(err){
-            res.status(401);
-            throw new Error("Not Authorized")
+            
+            let error =  new Error("Not Authorized")
+            error.status = 401;
+            next(error);
         }
     }else{
-        res.status(401);
-        throw new Error("Not Token Found")
+        
+        let err = new Error("Not Token Found")
+        err.status = 401
+        next(err);
     }
 }
 
-export default protect;
+
+module.exports = protect;
