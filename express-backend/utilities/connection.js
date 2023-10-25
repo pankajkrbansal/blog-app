@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const userSchema = require('../models/User')
-const postSchema = require('../models/Post')
+const User = require('../models/User')
+const Post = require('../models/Post')
 
 const url = "mongodb://0.0.0.0:27017/backend-task";
 
@@ -20,9 +20,14 @@ connection.connectDB = async function() {
 
 connection.getUserCollection = async function(){
     try{
-        let dbConnection = await mongoose.connect(url,{useNewUrlParser:true});
-        let model = await dbConnection.model("User", userSchema);
-        return model;
+        // No need to connect to the database again if it's already connected
+        if (mongoose.connection.readyState === 1) {
+            return User; // Return the User model
+        }
+         await mongoose.connect(url,{useNewUrlParser:true});
+        // let model = await dbConnection.model("User", userSchema);
+        // return model;
+        return User
     }catch(err){
         let error = new Error("Cannot connect to DB");
         error.status = 500;
@@ -32,9 +37,12 @@ connection.getUserCollection = async function(){
 
 connection.getPostCollection = async function(){
     try{
-        let dbConnection = await mongoose.connect(url,{useNewUrlParser:true});
-        let model = await dbConnection.model("Posts", postSchema);
-        return model;
+        // No need to connect to the database again if it's already connected
+        if (mongoose.connection.readyState === 1) {
+            return Post; // Return the Post model
+        }
+        await mongoose.connect(url,{useNewUrlParser:true});
+        return Post
     }catch(err){
         let error = new Error("Cannot connect to DB");
         error.status = 500;

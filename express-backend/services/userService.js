@@ -26,6 +26,18 @@ service.getAllPosts = async() => {
   }
 }
 
+
+service.getPostById = async(id) => {
+  try{
+    console.log("id = ", id);
+    const postCollection = await connection.getPostCollection();
+    const post = await postCollection.findById(id);
+    return post;
+  }catch(err){
+    throw err;
+  }
+}
+
 /**
  * Registers a new user.
  * @param {Object} usrBody - User data (name, email, password).
@@ -116,6 +128,21 @@ service.createPost = async (noteData) => {
     throw err;
   }
 };
+
+
+service.updatePost = async(post) => {
+  console.log("Edit post = ", post._id);
+  let postCollection = await connection.getPostCollection();
+  let resp = await postCollection.updateOne({ _id: post._id }, { $set: { ...post, imageId: post.imageId } });
+  console.log("Edit Resp = ", resp);
+  if (resp) {
+    return resp;
+  } else {
+    let err = new Error("User Not Found");
+    err.status = 404;
+    throw err;
+  }
+}
 
 /**
  * Posts a comment on a post.

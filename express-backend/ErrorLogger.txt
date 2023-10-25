@@ -370,3 +370,51 @@ Sun Sep 17 2023 01:45:55 GMT+0530 (India Standard Time) - TypeError [ERR_INVALID
     at done (D:\ANgular\full-stack-projects\blog-app\express-backend\node_modules\multer\lib\make-middleware.js:45:7)
     at indicateDone (D:\ANgular\full-stack-projects\blog-app\express-backend\node_modules\multer\lib\make-middleware.js:49:68)
     at D:\ANgular\full-stack-projects\blog-app\express-backend\node_modules\multer\lib\make-middleware.js:155:11
+Sun Oct 08 2023 02:10:36 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:136:35)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:143:16
+Sun Oct 08 2023 02:10:39 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:136:35)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:143:16
+Sun Oct 08 2023 02:10:41 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:136:35)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:143:16
+Sun Oct 08 2023 02:15:48 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:136:35)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:150:18
+Sun Oct 08 2023 02:18:05 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:150:18
+Sun Oct 08 2023 02:19:41 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:150:18
+Sun Oct 08 2023 02:21:23 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:150:18
+Sun Oct 08 2023 02:27:23 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16
+Sun Oct 08 2023 02:29:55 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16
+Sun Oct 08 2023 02:31:01 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16
+Sun Oct 08 2023 02:36:36 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:137:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16
+Sun Oct 08 2023 02:39:00 GMT+0530 (India Standard Time) - TypeError: postCollection.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:138:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16
+Sun Oct 08 2023 02:41:52 GMT+0530 (India Standard Time) - TypeError: searchedPost.update is not a function
+    at service.updatePost (D:\ANgular\full-stack-projects\blog-app\express-backend\services\userService.js:138:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async D:\ANgular\full-stack-projects\blog-app\express-backend\routes\userRoutes.js:142:16

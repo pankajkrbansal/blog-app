@@ -85,26 +85,39 @@ router.get('/all-posts', async(req, res, next) => {
   }
 })
 
+router.get('/post/:id', async(req, res, next) => {
+  try{
+    const id = req.params.id;
+    let post = await service.getPostById(id);
+    if(Object.keys(post).length > 0) {
+      console.log(post);
+      res.json(post);
+    }
+  }catch(err){
+     next(err)
+  }
+})
+
 /**
  * Route: POST /create
  * Description: Create a new post
  * Access: Private (protected with authentication)
  */
 
-// const upload = multer({dest:'./uploads'})
-// router.post("/create", protect, upload.single('file'),async (req, res, next) => {
+const upload = multer({dest:'uploads/'})
 router.post("/create", protect, upload.single('file'),async (req, res, next) => {
+// router.post("/create", protect, async (req, res, next) => {
   try {
     let postBody = req.body;
-    // const path = req.file.path;
-    // postBody.imageId = path;
+    const path = req.file.path;
+    
     postBody.email = req.user.email;
     
     // adding file extension to name of file stored in the uploads folder
-    // const nameSplit = req.file.originalname.split('.');
-    // const ext = nameSplit[nameSplit.length-1];
-    // fs.renameSync(path, path+'.'+ext);
-    
+    const nameSplit = req.file.originalname.split('.');
+    const ext = nameSplit[nameSplit.length-1];
+    fs.renameSync(path, path+'.'+ext);
+    postBody.imageId = path+'.'+ext;
     let resp = await service.createPost(postBody);
     if (resp) {
       res.json(resp);
@@ -113,6 +126,27 @@ router.post("/create", protect, upload.single('file'),async (req, res, next) => 
     next(err);
   }
 });
+
+const uploadEdit = multer({dest:'uploads/'})
+router.put('/edit', protect, uploadEdit.single('file'), async(req, res, next) => {
+  try{
+    let postBody = req.body;
+    if(req.file) {
+      const path = req.file.path;
+      postBody.email = req.user.email;
+      const nameSplit = req.file.originalname.split('.');
+      const ext = nameSplit[nameSplit.length-1];
+      fs.renameSync(path, path+'.'+ext);
+      postBody.imageId = path+'.'+ext;
+    }
+    let resp = await service.updatePost(postBody);
+    if(resp) {
+      res.json(resp)
+    }
+  }catch(err){
+    next(err)
+  }
+})
 
 /**
  * Route: POST /comments/:postId

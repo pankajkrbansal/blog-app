@@ -22,6 +22,8 @@ app.use(
   })
 );
 
+app.use('/uploads', express.static(__dirname + '/uploads'))
+
 const PORT = process.env.SERVER_PORT;
 
 // calling connectDB to connect with mongodb

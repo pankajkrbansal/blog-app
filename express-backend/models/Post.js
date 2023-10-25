@@ -1,13 +1,32 @@
 const mongoose = require("mongoose");
+const User = require("./User")
 
-const replySchema = mongoose.Schema({
-    replyId:{
-        type:String
-    },
+const commentSchema = mongoose.Schema({
     text:{
         // required:true,
         type:String
     },
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:true
+    },
+    blog:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Post',
+        required:true
+    },
+    parentComment:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Comment',
+        default:null
+    },
+    childComments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Comment'
+        }
+    ],
     email:{
         type:String,
         // required:true
@@ -19,24 +38,27 @@ const replySchema = mongoose.Schema({
     dislikes:{
         type:Number,
         default:0
-    },
-    
-})
+    },  
+},
+{timestamps:true})
 
 const postSchema = mongoose.Schema({
     title:{
         type:String,
         required:true
     },
-    // imageId:{
-    //     type:String,
-    //     required: true
-    // }
-    // ,
+    imageId:{
+        type:String,
+        required: true
+    },
     postId:{
         type:String,
         required:true
     },
+    summary:{
+        type:String,
+        required:true
+    }, 
     content:{
         type:String,
         required:true
@@ -49,31 +71,19 @@ const postSchema = mongoose.Schema({
         type:Number,
         default:0
     },
-    comment:[{
-        commentId:{
-            type:String,
-            required:true
-        },
-        text:{
-            type:String,
-        },
-        email:{
-            type:String,
-        },
-        like:{
-            type:Number,
-            default:0
-        },
-        dislike:{
-            type:Number,
-            default:0
-        },
-        replies:[replySchema],
-        // required:false,
-    }],
+    comment:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Comment'
+        }
+    ],
     // createdAt : Date
 },{
     timestamps:true
 })
 
-module.exports = postSchema
+
+const Post = mongoose.model('Post', postSchema)
+const Comment = mongoose.model('Comment', commentSchema)
+
+module.exports = Post
