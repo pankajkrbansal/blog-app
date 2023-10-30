@@ -109,15 +109,21 @@ router.post("/create", protect, upload.single('file'),async (req, res, next) => 
 // router.post("/create", protect, async (req, res, next) => {
   try {
     let postBody = req.body;
-    const path = req.file.path;
+    const path = (req.file && req.file.path) ? req.file.path : null;
     
     postBody.email = req.user.email;
     
     // adding file extension to name of file stored in the uploads folder
-    const nameSplit = req.file.originalname.split('.');
-    const ext = nameSplit[nameSplit.length-1];
-    fs.renameSync(path, path+'.'+ext);
-    postBody.imageId = path+'.'+ext;
+    if(path != null){
+      const nameSplit = req.file.originalname.split('.');
+      const ext = nameSplit[nameSplit.length-1];
+    
+      fs.renameSync(path, path+'.'+ext);
+      postBody.imageId = path+'.'+ext;
+    }else{
+      postBody.imageId = null;
+    }
+    
     let resp = await service.createPost(postBody);
     if (resp) {
       res.json(resp);

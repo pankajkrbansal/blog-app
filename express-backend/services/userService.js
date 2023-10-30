@@ -108,15 +108,9 @@ service.authUser = async (userData) => {
  * @throws {Error} - If the user is not found.
  */
 service.createPost = async (noteData) => {
-  // console.log("\nCreate Post Service\n");
-
   const uid = new ShortUniqueId({ length: 5 });
   let postCollection = await connection.getPostCollection();
-  // console.log("\nPostcollection\n", postCollection);
-
   noteData.postId = uid();
-  // noteData.replies = [];
-  // console.log("\nNote Data\n", noteData);
 
   let resp = await postCollection.create(noteData);
   // console.log("\nressponse\n", resp);

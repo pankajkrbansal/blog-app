@@ -49,7 +49,7 @@ const postSchema = mongoose.Schema({
     },
     imageId:{
         type:String,
-        required: true
+        default:null
     },
     postId:{
         type:String,
@@ -74,7 +74,8 @@ const postSchema = mongoose.Schema({
     comment:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:'Comment'
+            ref:'Comment',
+            default:[]
         }
     ],
     // createdAt : Date
